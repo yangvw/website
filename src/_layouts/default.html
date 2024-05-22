@@ -8,9 +8,9 @@ layout: base
 <main id="site-content">
   <header>
     <h1>{{title}}</h1>
-    <div id="site-breadcrumbs">
-
-    </div>
+    {% if show_breadcrumbs != false -%}
+    {% include breadcrumbs.html %}
+    {% endif -%}
   </header>
   <nav id="toc-inline">
 
