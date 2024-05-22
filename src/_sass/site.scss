@@ -471,6 +471,14 @@ pre, code {
         width: 100%;
       }
     }
+
+    a {
+      color: rgb(54, 54, 54);
+
+      &:hover {
+        color: #0468d7;
+      }
+    }
   }
 
   .footer-social-links {
