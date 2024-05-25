@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(_) {
-  scrollSidebarIntoView();
   initCookieNotice();
   setupCopyButtons();
-
-  setupSearch();
 
   setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
@@ -67,51 +64,6 @@ function getOS() {
 
   // Anything else
   return null;
-}
-
-function scrollSidebarIntoView() {
-  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
-
-  if (!fixedSidebar) {
-    return;
-  }
-
-  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
-
-  if (activeEntries.length > 0) {
-    const activeEntry = activeEntries[activeEntries.length - 1];
-
-    fixedSidebar.scrollTo({
-      top: activeEntry.offsetTop - window.innerHeight / 3,
-    });
-  }
-}
-
-function setupSearch() {
-  document.addEventListener('keydown', handleSearchShortcut);
-}
-
-function handleSearchShortcut(event) {
-  const activeElement = document.activeElement;
-  if (activeElement instanceof HTMLInputElement ||
-      activeElement instanceof HTMLTextAreaElement ||
-      event.code !== 'Slash'
-  ) {
-    return;
-  }
-
-  // If the page has a search field in the body, focus that.
-  const bodySearch = document.querySelector('input.gsc-input');
-  // Otherwise, focus the search field in the navbar.
-  const searchElement = bodySearch ? bodySearch : document
-      .querySelector('input.search-field');
-
-  // If we successfully found a search field, focus that.
-  if (searchElement) {
-    searchElement.focus();
-    // Prevent the initial slash from showing up in the search field.
-    event.preventDefault();
-  }
 }
 
 /**
