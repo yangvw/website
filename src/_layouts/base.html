@@ -121,8 +121,46 @@
       <div id="site-banner">
 
       </div>
-      <div id="site-primary">
-        {{ content }}
+      <div id="site-main-row">
+        <nav id="sidenav">
+          <ul>
+            <li class=""><a href="." target="" rel=""><span>5. Learn more</span></a></li>
+            <div class="sidenav-divider" aria-hidden="true"></div>
+            <li class=""><a href="#"><span>From another platform?</span><div class="sidenav-expander"><span class="material-symbols">expand_more</span></div></a><ul><li><a href="." target="" rel=""><span>Flutter for Android devs</span></a></li><li><a href="." target="" rel=""><span>Flutter for React Native devs</span></a></li><li><a href="." target="" rel=""><span>Flutter for SwiftUI devs</span></a></li></ul></li>
+          </ul>
+        </nav>
+        <div id="content-and-toc">
+          <div id="site-primary">
+            {{ content }}
+          </div>
+          <aside id="side-menu">
+            <nav id="toc-side" >
+              <header>
+                <span class="material-symbols">list</span>
+                <span>On this page</span>
+              </header>
+              <ul>
+                <li class=""><a href=".">What patterns do</a></li>
+                <li class="active level-2"><a href=".">Matching</a></li>
+                <li class="level-2"><a href=".">Destructuring</a></li>
+              </ul>
+
+            </nav>
+            <nav id="recommendations-side" >
+              <header>
+                <span class="material-symbols">recommend</span>
+                <span>Recommended</span>
+              </header>
+              <ul>
+                <li class=""><a href=".">Pattern types</a></li>
+                <li class="active"><a href=".">Loops</a></li>
+                <li class=""><a href=".">Branches</a></li>
+              </ul>
+
+            </nav>
+          </aside>
+        </div>
+        <div class="invisible-flex-item" aria-hidden="true"></div>
       </div>
       <footer id="site-footer">
         <div class="footer-main">

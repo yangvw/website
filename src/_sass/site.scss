@@ -113,7 +113,7 @@ pre, code {
 }
 
 *:focus-visible {
-  outline: none;
+  outline: 2px solid #027DFD;
 }
 
 #sidenav {
@@ -166,7 +166,7 @@ pre, code {
   cursor: pointer;
 
   font-variant-ligatures: none;
-  color: rgb(54, 54, 54);
+  color: rgb(74, 74, 74);
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-family: 'Google Sans', ui-sans, sans-serif;
@@ -231,16 +231,26 @@ pre, code {
     border-radius: 0.75rem;
     padding: 0.5rem;
 
+    font-family: 'Google Sans';
     background-color: rgb(241 243 244);
     color: rgb(54, 54, 54);
 
+    &:focus-within {
+      outline: 2px solid #027DFD;
+    }
+
     input {
+      border-radius: 0.375rem;
       caret-color: #027DFD;
       padding: 0.5rem;
       background: none;
       text-overflow: ellipsis;
       width: 100%;
       overscroll-behavior: contain;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     @media(max-width: 576px) {
@@ -286,6 +296,109 @@ pre, code {
   overflow-y: auto;
 }
 
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem;
+
+  @media(max-width: 576px) {
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+#content-and-toc {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.invisible-flex-item {
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+
+#side-menu {
+  position: sticky;
+  top: 1rem;
+  max-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  height: fit-content;
+  min-width: 11rem;
+  max-width: 11rem;
+  overflow-y: scroll;
+  font-family: 'Google Sans';
+
+  @media(max-width: 960px) {
+    display: none;
+  }
+
+  nav {
+    header {
+      font-size: 1rem;
+      margin-block-end: 0.25rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+
+      span.material-symbols {
+        color: #1967d2;
+        user-select: none;
+      }
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      margin: 0 0 0 10px;
+      font-size: 0.875rem;
+
+      li {
+        border-inline-start: 1px solid transparent;
+
+        --toc-indent: 0;
+
+        &.level-2 {
+          --toc-indent: 1;
+        }
+
+        &.level-3 {
+          --toc-indent: 2;
+        }
+
+        a {
+          color: rgb(86, 86, 86);
+          border-radius: 0;
+          border-inline-start: 2px solid lightgray;
+          display: block;
+          padding: 0.3rem 1rem;
+          padding-left: calc(1rem + var(--toc-indent) * 0.5rem);
+          text-decoration: none;
+        }
+
+        &.active {
+          border-inline-start: 1px solid #1967d2;
+
+          a {
+            border-inline-start: 2px solid #1967d2;
+            color: #1967d2;
+          }
+        }
+      }
+    }
+  }
+}
+
 #site-banner {
   width: 100%;
   display: flex;
@@ -308,15 +421,14 @@ pre, code {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  margin: 1rem;
-  max-width: 64rem;
+  margin: 0;
+  max-width: 52rem;
 
   background-color: rgb(255 255 255);
   border-radius: 0.375rem;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
   @media(max-width: 576px) {
-    margin: 0 0 1rem;
     border-radius: 0;
   }
 }
@@ -431,15 +543,90 @@ pre, code {
   }
 }
 
+#sidenav {
+  margin: 0;
+  overflow-y: auto;
+  min-width: 14rem;
+  width: 14rem;
+  font-family: 'Google Sans';
+
+  @media(max-width: 768px) {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidenav-divider {
+    background-color: rgb(218 220 224);
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 0.125rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    user-select: none;
+
+    a {
+      padding: 0.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      border-radius: 0.375rem;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      cursor: pointer;
+
+      color: rgb(54, 54, 54);
+      text-decoration: none;
+
+      .child-active {
+
+      }
+    }
+
+    .sidenav-expander {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      // TODO: transform and transition animation
+    }
+  }
+
+  > ul {
+    ul {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
 #site-footer {
   position: relative;
-  max-width: 64rem;
   background-color: rgb(255 255 255);
   padding: 1rem;
   border-radius: 0.375rem;
   margin: 0 1rem 1rem;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   font-size: 14px;
+  font-family: 'Google Sans';
+
+  @media(max-width: 576px) {
+    margin: 1rem 0 0;
+    border-radius: 0;
+  }
 
   > div {
     display: flex;
