@@ -1,4 +1,21 @@
+function setupTheme() {
+  const themeSwitcher = document.getElementById('theme-switcher');
+
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', (_) => {
+      if (document.body.classList.contains('dark-mode')) {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+      } else {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+      }
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function(_) {
+  setupTheme();
   initCookieNotice();
   setupCopyButtons();
 
