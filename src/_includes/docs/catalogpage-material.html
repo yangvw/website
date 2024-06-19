@@ -26,7 +26,7 @@
     {% assign components = catalog.widgets | widget_filter: "subcategories", sub.name %}
     {% if components.size != 0 -%}
     <h2 id="{{sub.name}}">{{sub.name}}</h2>
-    <div class="card-deck card-deck--responsive">
+    <div class="card-deck">
         {% for comp in components -%}
             <div class="card">
                 <a href="{{comp.link}}">
