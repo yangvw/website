@@ -27,6 +27,7 @@ import * as sass from 'sass';
  */
 export default function (eleventyConfig) {
   const isProduction = process.env.PRODUCTION === 'true';
+  const shouldOptimize = process.env.OPTIMIZE === 'true';
 
   eleventyConfig.on('eleventy.before', async () => {
     await configureHighlighting(markdown);
@@ -123,7 +124,7 @@ ${content}
       }
 
       const result = sass.compileString(inputContent, {
-        style: isProduction ? 'compressed' : 'expanded',
+        style: shouldOptimize ? 'compressed' : 'expanded',
         quietDeps: true,
         loadPaths: [parsedPath.dir, 'src/_sass'],
       });
@@ -153,7 +154,7 @@ ${content}
     filter: (path) => path.includes('src') || path.includes('images'),
   });
 
-  if (isProduction) {
+  if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.
     // Doing so during serving isn't worth the extra build time.
     eleventyConfig.addTransform('minify-html', async function (content) {

@@ -220,7 +220,8 @@ and your app's Dart file.
     import 'package:integration_test/integration_test.dart';
 
     void main() {
-      // ···
+      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
       group('end-to-end test', () {
         testWidgets('tap on the floating action button, verify counter',
             (tester) async {
@@ -594,7 +595,7 @@ consult the [iOS Device Testing][] section in the README.
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [Integration testing]: /testing/integration-tests
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
+[Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
 [widget tests]: /testing/overview#widget-tests
 
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

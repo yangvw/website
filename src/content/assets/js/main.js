@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
   setupTabs($('#base-os-tabs'), 'dev.flutter.os');
   setupTabs($('#xcode-ide-vs-ui'), 'dev.flutter.xcode-ux');
+  setupTabs($('#ios-project-setup'), 'dev.flutter.ios.project-setup');
 });
 
 function _getOSForArchive() {
@@ -63,13 +64,13 @@ function getOS() {
     return 'macos';
   }
 
-  if (userAgent.indexOf('Win')) {
+  if (userAgent.indexOf('Win') !== -1) {
     // Windows
     return 'windows';
   }
 
   if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
-    && userAgent.indexOf('Android') !== -1) {
+    && userAgent.indexOf('Android') === -1) {
     // Linux, but not Android
     return 'linux';
   }

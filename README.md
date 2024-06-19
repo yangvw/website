@@ -117,7 +117,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `20.10` or later)_:
+and already the latest stable version _(currently `20.12` or later)_:
 
 ```console
 node --version
@@ -226,6 +226,10 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    ```console
    pnpm install
    ```
+   
+   Rerun `pnpm install` whenever you incorporate the
+   latest changes to the `main` branch or if you
+   experience dependency or import errors when building the site.
 
 5. From the root directory, run the `dash_site` tool to
    validate your setup and learn about the available commands.
@@ -289,7 +293,7 @@ and we'll try our best to help you.
 You can also chat with us on the `#hackers-devrel` channel
 on the [Flutter contributors Discord][]!
 
-[Flutter contributors Discord]: https://github.com/flutter/flutter/wiki/Chat
+[Flutter contributors Discord]: https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
 
 ### Refresh code excerpts
 
