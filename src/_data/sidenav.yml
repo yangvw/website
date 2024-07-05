@@ -468,7 +468,7 @@
           permalink: /platform-integration/macos/install-macos
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/macos/c-interop
     - title: Web
       permalink: /platform-integration/web
@@ -483,7 +483,7 @@
           permalink: /platform-integration/web/faq
         - title: Web renderers
           permalink: /platform-integration/web/renderers
-        - title: Custom app initialization
+        - title: Customize app initialization
           permalink: /platform-integration/web/initialization
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
@@ -664,7 +664,7 @@
       permalink: /tools/devtools
       children:
         - title: Overview
-          permalink: /tools/devtools/overview
+          permalink: /tools/devtools
         - title: Run from Android Studio & IntelliJ
           permalink: /tools/devtools/android-studio
         - title: Run from VS Code

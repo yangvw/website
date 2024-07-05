@@ -41,7 +41,7 @@ second route returns to the first route.
 
 First, set up the visual structure:
 
-<?code-excerpt "lib/main_step1.dart (FirstSecondRoutes)"?>
+<?code-excerpt "lib/main_step1.dart (first-second-routes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
@@ -98,9 +98,9 @@ new route using a platform-specific animation.
 In the `build()` method of the `FirstRoute` widget,
 update the `onPressed()` callback:
 
-<?code-excerpt "lib/main_step2.dart (FirstRouteOnPressed)"?>
+<?code-excerpt "lib/main_step2.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
-// Within the `FirstRoute` widget
+// Within the `FirstRoute` widget:
 onPressed: () {
   Navigator.push(
     context,
@@ -119,7 +119,7 @@ routes managed by the `Navigator`.
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
 
-<?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
+<?code-excerpt "lib/main_step2.dart (second-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
 // Within the SecondRoute widget
 onPressed: () {
@@ -130,7 +130,7 @@ onPressed: () {
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {
@@ -218,7 +218,7 @@ depending on your needs.
 :::
 
 <?code-excerpt "lib/main_cupertino.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
 import 'package:flutter/cupertino.dart';
 
 void main() {

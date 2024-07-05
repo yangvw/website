@@ -11,7 +11,7 @@ you can also see all the widgets in the [widget index][].
 <div class="card-deck">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    {%- if section.name != "Material 2 Components" -%}
+    {%- if section.name != "Material 2 components" -%}
         <a class="card" href="{{page.url}}{{section.id}}">
             <div class="card-body">
                 <header class="card-title">{{section.name}}</header>

@@ -8,6 +8,8 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/gradient_bubbles"?>
 
+{% include docs/deprecated.md %}
+
 Traditional chat apps display messages in chat bubbles
 with solid color backgrounds. Modern chat apps display
 chat bubbles with gradients that are based 
@@ -152,9 +154,8 @@ BubblePainter(
   scrollable: ScrollableState(),
 ),
 ```
-<!-- this code excerpt adds an extra closing bracket
-at the end because the excerpt cuts off the paint method that's required for Custom Painter. -->
-<?code-excerpt "lib/bubble_painter.dart (BPWithoutPaint)" replace="/}\n/}\n}\n/g;"?>
+
+<?code-excerpt "lib/bubble_painter.dart (bp-without-paint)" plaster="none"?>
 ```dart
 class BubblePainter extends CustomPainter {
   BubblePainter({
@@ -257,7 +258,7 @@ Run the app:
 
 <!-- start dartpad -->
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter graident bubbles hands-on example in DartPad" run="true"
 import 'dart:math';
 import 'dart:ui' as ui;
 

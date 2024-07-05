@@ -87,8 +87,8 @@ For more information, see the API docs for:
 
 On the platform side, use either Swift or Objective-C:
 
-{% samplecode "ios-platform-views", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
@@ -174,10 +174,10 @@ import UIKit
     ) -> Bool {
         GeneratedPluginRegistrant.register(with: self)
 
-        weak var registrar = self.registrar(forPlugin: "plugin-name")
+        guard let pluginRegisterar = self.registrar(forPlugin: "plugin-name") else { return false }
 
-        let factory = FLNativeViewFactory(messenger: registrar!.messenger())
-        self.registrar(forPlugin: "<plugin-name>")!.register(
+        let factory = FLNativeViewFactory(messenger: pluginRegistrar.messenger())
+        pluginRegistrar.register(
             factory,
             withId: "<platform-view-type>")
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -201,8 +201,8 @@ class FLPlugin: NSObject, FlutterPlugin {
 }
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 In Objective-C, add the headers for the factory and the platform view.
 For example, as shown in `FLNativeView.h`:
@@ -335,8 +335,8 @@ modify the main plugin file
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 For more information, see the API docs for:
 

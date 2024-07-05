@@ -19,7 +19,7 @@ Create a ripple effect using the following steps:
   2. Wrap it in an `InkWell` widget to manage tap callbacks and
      ripple animations.
 
-<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 // The InkWell wraps the custom flat button widget.
 InkWell(
@@ -39,7 +39,7 @@ InkWell(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Material ripples hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

@@ -81,7 +81,7 @@ To create this effect:
   3. Add a `flexibleSpace` widget that fills the available
      `expandedHeight`.
 
-<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 CustomScrollView(
   slivers: [
@@ -125,7 +125,7 @@ For example, the [`SliverChildBuilderDelegate`][]
 allows you to create a list of items that are built lazily as you scroll,
 just like the `ListView.builder` widget.
 
-<?code-excerpt "lib/main.dart (SliverList)" replace="/,$//g"?>
+<?code-excerpt "lib/main.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
 // Next, create a SliverList
 SliverList(
@@ -143,7 +143,7 @@ SliverList(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter Floating AppBar hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

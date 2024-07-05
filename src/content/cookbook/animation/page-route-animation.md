@@ -205,7 +205,7 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
-<?code-excerpt "lib/starter.dart (step4)" replace="/,$//g"?>
+<?code-excerpt "lib/starter.dart (step4)" replace="/^\},$/}/g"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   const begin = Offset(0.0, 1.0);
@@ -228,7 +228,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter page routing hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -186,7 +186,7 @@ Furthermore, you must display the `VideoPlayer` widget after the
 display a loading spinner until the controller finishes initializing.
 Note: initializing the controller does not begin playback.
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
 // Use a FutureBuilder to display a loading spinner while waiting for the
 // VideoPlayerController to finish initializing.
@@ -225,7 +225,7 @@ When the user taps the button,
 play the video if it's currently paused,
 or pause the video if it's playing.
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
@@ -251,7 +251,7 @@ FloatingActionButton(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter video player hands-on example in DartPad" run="true"
 import 'dart:async';
 
 import 'package:flutter/material.dart';

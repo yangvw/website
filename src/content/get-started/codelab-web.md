@@ -129,7 +129,7 @@ of the Flutter DevTools tooling.
 The starting app is displayed in the following DartPad.
 
 <?code-excerpt "lib/starter.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter beginning getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -877,7 +877,7 @@ the animation works, and that clicking the
 ### Complete sample
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter complete getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -1119,11 +1119,11 @@ Dart DevTools, or Flutter animations, see the following:
 [Building a form with validation]: /cookbook/forms/validation
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: /get-started/test-drive
-[Dart DevTools]: /tools/devtools/overview
+[Dart DevTools]: /tools/devtools
 [DartPad]: {{site.dartpad}}
 [DevTools command line]: /tools/devtools/cli
 [DevTools documentation]: /tools/devtools
-[DevTools installed]: /tools/devtools/overview#start
+[DevTools installed]: /tools/devtools#start
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: /get-started/editor

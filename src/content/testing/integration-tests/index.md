@@ -1,7 +1,6 @@
 ---
 title: Check app functionality with an integration test
 description: Learn how to write integration tests
-os-list: [Windows, macOS, Linux]
 ---
 
 <?code-excerpt path-base="testing/integration_tests/how_to"?>
@@ -218,28 +217,28 @@ and your app's Dart file.
     import 'package:flutter_test/flutter_test.dart';
     import 'package:how_to/main.dart';
     import 'package:integration_test/integration_test.dart';
-
+    
     void main() {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
+    
       group('end-to-end test', () {
         testWidgets('tap on the floating action button, verify counter',
             (tester) async {
           // Load app widget.
           await tester.pumpWidget(const MyApp());
-
+    
           // Verify the counter starts at 0.
           expect(find.text('0'), findsOneWidget);
-
+    
           // Finds the floating action button to tap on.
           final fab = find.byKey(const ValueKey('increment'));
-
+    
           // Emulate a tap on the floating action button.
           await tester.tap(fab);
-
+    
           // Trigger a frame.
           await tester.pumpAndSettle();
-
+    
           // Verify the counter increments by 1.
           expect(find.text('1'), findsOneWidget);
         });
@@ -316,35 +315,23 @@ complete the following tasks.
 
 Based on platform, the command result should resemble the following output.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
-{% for os in os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs %}
+{% tab "Windows" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-{% for os in os-list %}
-{% assign id = os | downcase -%}
-<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
+{% render docs/test/integration/windows-example.md %}
 
-{% case id %}
-{% when 'windows' %}
-  {% render docs/test/integration/windows-example.md %}
-{% when 'macos' %}
-  {% render docs/test/integration/macos-example.md %}
-{% when 'linux' %}
-  {% render docs/test/integration/linux-example.md %}
-{% endcase %}
-</div>
+{% endtab %}
+{% tab "macOS" %}
 
-{% endfor -%}
-</div>
-{% comment %} End: Tab panes. {% endcomment %}
+{% render docs/test/integration/macos-example.md %}
+
+{% endtab %}
+{% tab "Linux" %}
+
+{% render docs/test/integration/linux-example.md %}
+
+{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -431,7 +418,7 @@ To test in a web browser, perform the following steps.
    <?code-excerpt "test_driver/integration_test.dart"?>
    ```dart title="test_driver/integration_test.dart"
    import 'package:integration_test/integration_test_driver.dart';
-
+   
    Future<void> main() => integrationDriver();
    ```
 
