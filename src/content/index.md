@@ -4,14 +4,14 @@ short-title: Docs
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
-<div class="card-deck">
+<div class="card-grid">
 {% for card in docs_cards -%}
-  <a class="card" href="{{card.url}}">
-    <div class="card-body">
-      <header class="card-title">{{card.name}}</header>
-      <p class="card-text">{{card.description}}</p>
-    </div>
-  </a>
+    <a class="card" href="{{card.url}}">
+      <div class="card-body">
+        <header class="card-title">{{card.name}}</header>
+        <p class="card-text">{{card.description}}</p>
+      </div>
+    </a>
 {% endfor %}
 </div>
 
@@ -70,15 +70,15 @@ In Flutter, "everything is a widget"!
 Learn more about `Stateless` and `Stateful`
 widgets in [What is State?][]
 
-<div class="card-deck card-video-deck">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
-            <iframe src="{{site.yt.embed}}/xWV71C2kp38" title="Create your first Flutter app" {{site.yt.set}}></iframe>
+            {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe src="{{site.yt.embed}}/QlwiL_yLh6E" title="What is state?" {{site.yt.set}}></iframe>
+            {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
         </div>
     </div>
 </div>
@@ -86,10 +86,9 @@ widgets in [What is State?][]
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
 [What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 
-<div class="video-wrapper">
-  <span class="video-intro">Only have 60 seconds? Learn how to build and deploy a Flutter App!</span>
-  <iframe width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
-</div>
+{% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
+{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
+{% endvideoWrapper %}
 
 ## Want to skill up?
 
@@ -98,15 +97,15 @@ Learn [why you write standalone widgets instead of
 using helper methods][standalone-widgets] or
 [what is "BuildContext" and how is it used][buildcontext]?
 
-<div class="card-deck card-video-deck">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
-            <iframe src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
+            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
-            <iframe src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
+            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
         </div>
     </div>
 </div>
@@ -120,8 +119,5 @@ see our [videos][] page.
 We release new videos almost every week on the Flutter YouTube channel:
 
 <a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
-
-**The documentation on this site reflects the
-latest stable release of Flutter.**
 
 [videos]: /resources/videos

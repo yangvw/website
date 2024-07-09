@@ -19,9 +19,23 @@ document.addEventListener("DOMContentLoaded", function(_) {
   initCookieNotice();
   setupCopyButtons();
 
-  setupSearch();
+  //setupSearch();
   setupTabs();
+  setupInlineToc();
 });
+
+function setupInlineToc() {
+  // Set up the inline TOC's ability to expand and collapse.
+  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
+  toggle.forEach(function (toggle) {
+    toggle.addEventListener('click', (_) => {
+      const inlineToc = document.getElementById('site-toc--inline');
+      if (inlineToc) {
+        inlineToc.classList.toggle('toc-collapsed');
+      }
+    });
+  });
+}
 
 /**
  * Get the user's current operating system, or
