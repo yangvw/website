@@ -13,15 +13,12 @@ you can also see all the widgets in the [widget index][].
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
     {%- if section.name != "Material 2 components" -%}
-        <div class="card">
+        <a class="card" href="{{page.url}}{{section.id}}">
             <div class="card-body">
-                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+                <header class="card-title">{{section.name}}</header>
                 <p class="card-text">{{section.description}}</p>
             </div>
-            <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}" aria-label="Navigate to the {{section.name}} widgets catalog">Visit</a>
-            </div>
-        </div>
+        </a>
     {% endif -%}
 {% endfor %}
 </div>
